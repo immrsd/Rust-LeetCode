@@ -6,7 +6,7 @@ use std::cmp;
 impl Solution {
 
     pub fn minimum_deviation(nums: Vec<i32>) -> i32 {
-        let mut queue = BinaryHeap::new();
+        let mut queue = BinaryHeap::with_capacity(nums.len());
         let mut min_n = i32::MAX;
         nums.into_iter()
             .map(|n| if n % 2 == 0 { n } else { n * 2 })
